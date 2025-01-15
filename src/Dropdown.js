@@ -1,17 +1,18 @@
-import React, { useState } from "react";
-import "./Dropdown.css"; // Ensure your CSS is linked
+import { useState } from "react";
+import "./Dropdown.css"; // Style import for Dropdown 
 
 const Dropdown = ({ items }) => {
+
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Select");
 
   // Function to handle option selection
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
-    setIsOpen(false); // Close the dropdown after selection
+    setIsOpen(false); // Close dropdown after selection
   };
 
-  // Functions to handle hover states
+  // Functions to handle hover
   const handleMouseEnter = () => {
     setIsOpen(true);
   };
@@ -26,7 +27,6 @@ const Dropdown = ({ items }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Header displaying selected option */}
       <div className="dropdown-header">{selectedOption}</div>
       {/* Dropdown options */}
       {isOpen && (
