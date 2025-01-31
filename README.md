@@ -27,7 +27,7 @@ Dropdown/
 ### Prerequisites
 Ensure you have the following installed:
 - [Node.js](https://nodejs.org/) (latest LTS version recommended)
-- npm or yarn
+- npm
 
 ### Installation
 Clone the repository and install dependencies:
