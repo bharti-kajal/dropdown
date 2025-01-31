@@ -1,43 +1,48 @@
-import { useState } from "react";
-import "./Dropdown.css"; // Style import for Dropdown 
+import { useState } from "react"; // Import hook from Reac
+import "./Dropdown.css"; // Import dropdown style
 
-const Dropdown = ({ items }) => {
+// Dropdown component
+const Dropdown = ({ items }) => { 
 
+  // Set state
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("Select");
+  const [selectedOption, setSelectedOption] = useState("Select"); 
 
-  // Function to handle option selection
+  // Function - handle option selection
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
-    setIsOpen(false); // Close dropdown after selection
+    setIsOpen(false);
   };
 
-  // Functions to handle hover
+  // Function - open dropdown on mouse hover
   const handleMouseEnter = () => {
     setIsOpen(true);
   };
 
+  // Function - close dropdown on mouse leave
   const handleMouseLeave = () => {
     setIsOpen(false);
   };
 
   return (
     <div
-      className={`dropdown ${isOpen ? "open" : ""}`}
+      className={`dropdown ${isOpen ? "open" : ""}`} 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
+      {/* Display selected option */}
       <div className="dropdown-header">{selectedOption}</div>
-      {/* Dropdown options */}
+      
+      {/* Render dropdown list only if isOpen is true */}
       {isOpen && (
         <ul className="dropdown-list">
-          {items.map((item, index) => (
+          {items.map((item, index) => ( 
             <li
-              key={index}
+              key={index} 
               onClick={() => handleOptionSelect(item)}
               className="dropdown-item"
             >
-              {item}
+              {item} 
             </li>
           ))}
         </ul>

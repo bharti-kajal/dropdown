@@ -1,13 +1,18 @@
+/* General Page Styling */
 body {
   text-align: center;
   font-family: Arial, sans-serif;
-  background:#002d3c;
+  background: #002d3c;
+  margin: 0;
+  padding: 0;
 }
 
-h2{
+/* Heading Styling */
+h2 {
   color: #f5f5f5;
 }
 
+/* Dropdown Container */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -17,10 +22,12 @@ h2{
   width: 280px;
   text-align: left;
   cursor: pointer;
-  box-shadow: 0 .125rem .25rem #d9a86714 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease-in-out;
 }
 
-.dropdown > .dropdown-header {
+/* Dropdown Header */
+.dropdown-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,7 +35,8 @@ h2{
   font-size: 18px;
 }
 
-.dropdown > .dropdown-header::after {
+/* Dropdown Arrow (Closed State) */
+.dropdown-header::after {
   content: "";
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
@@ -36,39 +44,44 @@ h2{
   margin-left: 10px;
 }
 
-.dropdown.open > .dropdown-header::after {
+/* Dropdown Arrow (Open State) */
+.dropdown.open .dropdown-header::after {
   border-top: none;
   border-bottom: 5px solid black;
 }
 
+/* Dropdown Menu */
 .dropdown ul {
   position: absolute;
-  box-shadow:0 .125rem .25rem #00000013!important;
   top: 100%;
-  left: 0;
-  width: 100%;
+  left: 0; 
+  width: 100%; 
   margin: 0;
   padding: 0;
   list-style: none;
-  border-radius: 4px;
-  box-shadow: 0 3px 6px #0000002d;
-  display: none;
-  z-index: 1000;
+  border-radius: 4px; 
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); 
+  display: none; 
+  z-index: 1000; 
 }
 
+/* Dropdown Menu (Open State) */
 .dropdown.open ul {
   display: block;
   background-color: #19424f;
 }
 
+/* Dropdown Items */
 .dropdown ul li {
   padding: 12px 15px;
-  border-bottom: 2px solid #f5f5f5;
+  border-bottom: 2px solid #f5f5f5; 
   cursor: pointer;
   color: #f5f5f5;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+/* Dropdown Item Hover Effect */
 .dropdown ul li:hover {
-  background-color: #ccd5d8;
-  color: black
+  background-color: #ccd5d8; 
+  color: black;
 }
