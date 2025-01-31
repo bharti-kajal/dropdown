@@ -37,7 +37,7 @@ npm install
 
 ### Running the Project
 Start the development server:
-npm start  # or yarn start
+npm start 
 
 This will launch the project on `http://localhost:3000/`.
 
